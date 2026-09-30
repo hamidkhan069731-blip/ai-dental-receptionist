@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smile Dental Clinic — Admin</title>
+<link rel="stylesheet" href="/admin/admin.css">
+</head>
+<body>
+
+<div class="login-screen" id="login-screen">
+  <div class="login-card">
+    <h1>Admin Login</h1>
+    <p class="sub">Smile Dental Clinic — staff access only</p>
+    <div class="field">
+      <label for="login-email">Email</label>
+      <input type="email" id="login-email" value="admin@smiledental.example" autocomplete="username">
+    </div>
+    <div class="field">
+      <label for="login-password">Password</label>
+      <input type="password" id="login-password" autocomplete="current-password">
+    </div>
+    <button class="btn-full" id="login-btn">Log in</button>
+    <p class="login-error" id="login-error"></p>
+  </div>
+</div>
+
+<div class="app-shell" id="app-shell">
+  <aside class="sidebar">
+    <h1>Smile Dental — Admin</h1>
+    <button class="nav-link active" data-page="dashboard">Dashboard</button>
+    <button class="nav-link" data-page="appointments">Appointments</button>
+    <button class="nav-link" data-page="doctors">Doctors</button>
+    <button class="nav-link" data-page="services">Services</button>
+    <button class="nav-link" data-page="faqs">FAQs</button>
+    <button class="nav-link" data-page="conversations">Conversation Logs</button>
+    <button class="nav-link" data-page="settings">Clinic Settings</button>
+    <div class="sidebar-footer">
+      Logged in as <span id="current-user">—</span>
+      <br>
+      <button class="logout-btn" id="logout-btn">Log out</button>
+    </div>
+  </aside>
+
+  <main class="main-area">
+
+    <section class="page active" id="page-dashboard">
+      <h2 class="page-title">Dashboard</h2>
+      <div class="stat-grid" id="stat-grid"></div>
+      <h3>Today's appointments</h3>
+      <div id="today-table-wrap"><p class="empty-state">Loading…</p></div>
+    </section>
+
+    <section class="page" id="page-appointments">
+      <h2 class="page-title">Appointments</h2>
+      <div class="toolbar">
+        <input type="date" id="appt-date-filter">
+        <select id="appt-status-filter">
+          <option value="">All statuses</option>
+          <option value="pending">Pending</option>
+          <option value="confirmed">Confirmed</option>
+          <option value="cancelled">Cancelled</option>
+          <option value="completed">Completed</option>
+          <option value="no_show">No show</option>
+        </select>
+        <button class="btn-small" id="appt-refresh">Refresh</button>
+      </div>
+      <div id="appt-table-wrap"><p class="empty-state">Loading…</p></div>
+    </section>
+
+    <section class="page" id="page-doctors">
+      <h2 class="page-title">Doctors</h2>
+      <div id="doctors-table-wrap"><p class="empty-state">Loading…</p></div>
+    </section>
+
+    <section class="page" id="page-services">
+      <h2 class="page-title">Services</h2>
+      <div id="services-table-wrap"><p class="empty-state">Loading…</p></div>
+    </section>
+
+    <section class="page" id="page-faqs">
+      <h2 class="page-title">FAQs</h2>
+      <div id="faqs-table-wrap"><p class="empty-state">Loading…</p></div>
+    </section>
+
+    <section class="page" id="page-conversations">
+      <h2 class="page-title">Conversation Logs</h2>
+      <div id="conversations-table-wrap"><p class="empty-state">Loading…</p></div>
+    </section>
+
+    <section class="page" id="page-settings">
+      <h2 class="page-title">Clinic Settings</h2>
+      <div id="settings-form-wrap"><p class="empty-state">Loading…</p></div>
+    </section>
+
+  </main>
+</div>
+
+<script src="/admin/admin.js"></script>
+</body>
+</html>
